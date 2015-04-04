@@ -1,6 +1,6 @@
 function T=mfat3d(x)
-	alphap=1.6:0.02:2;
-	r=0.05:0.05:10;
+	alphap=1.6:0.01:2;
+	r=[0.05 0.1:0.3:10];
 	Na=length(alphap);
 	Nr=length(r);
 	T=zeros(Na,Nr);
