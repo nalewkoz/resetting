@@ -1,5 +1,6 @@
 function T=mfat3d(x)
-	alphap=2:-0.03:1.6-x/120;
+	xgr=min(x,60);
+	alphap=2:-0.03:1.6-xgr/120;
 	r=[0.06:0.03:0.3 0.4:0.2:8];
 	r=r/x^1.8;
 
