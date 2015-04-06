@@ -1,7 +1,7 @@
 dt=0.01;
 x0=1;
-eps0=[0.01 0.04 0.07 0.1 0.13];
-M=10^3;
+eps0=[0.07 0.08 0.09 0.1 0.12];
+M=10^4;
 
 r=1;
 
@@ -23,8 +23,12 @@ for i=1:length(alpha_tab)
 	end
 	Tanal=mfat_anal_final(r,D,x0,a);
 	T0=T0-Tanal;
-	p=polyfit(eps0,T0,1);
-	eps(i)=-p(2)/p(1);
+	p=polyfit(eps0,T0,2);
+%	eps(i)=-p(2)/p(1);
+	T0
+	eps0=eps0-0.03;
+	eps(i)=(-p(2)-sqrt(p(2)^2-4*p(1)*p(3)))/(2*p(1));
+
 	fprintf('Idealny eps: %.3f\n',eps(i));
 	for j=1:length(x_tab)
 		fprintf('\ralpha=%.1f x=%.2f',a,x_tab(j));
