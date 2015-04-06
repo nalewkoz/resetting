@@ -1,6 +1,6 @@
 function T=mfat3d(x)
 	alphap=1.6-x/150:0.01:2;
-	r=[0.25:0.02:0.35 0.4:0.1:10];
+	r=[0.1:0.02:0.35 0.4:0.1:10];
 	r=r/x^2;
 
 	Na=length(alphap);
@@ -18,5 +18,5 @@ function T=mfat3d(x)
 
 	%h=surf(r,alpha,T);
 	%printpdf(h,sprintf('mfat3d_%.1f',x));
-	save(sprintf('data3dplots_%.1f.mat',x),'x','alphap','r','T');
+	save(sprintf('data3dplot/data3dplots_%.1f.mat',x),'x','alphap','r','T');
 end
