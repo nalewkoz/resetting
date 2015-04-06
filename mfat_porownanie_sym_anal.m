@@ -1,10 +1,10 @@
 dt=0.01;
-eps=0.08;
+eps=[0.09 0.06 0.05];
 M=10^3;
 
 alpha_tab=[2 1.8 1.6];
 x0=1;
-r_tab=0.5:0.5:5;
+r_tab=0.1:0.5:10;
 
 meanTs=zeros(length(alpha_tab),length(r_tab));
 disp('Pierwsza petla (symulacje)...');
@@ -16,7 +16,7 @@ for i=1:length(alpha_tab)
 	D=1/lambda^a;
 	for j=1:length(r_tab)
 		fprintf('\ralpha=%.1f r=%.2f',a,r_tab(j));
-		meanTs(i,j)=mfat_sym_alpha(D,x0,r_tab(j),a,dt,eps,M);
+		meanTs(i,j)=mfat_sym_alpha(D,x0,r_tab(j),a,dt,eps(i),M);
 	end
 end
 fprintf('\n');
