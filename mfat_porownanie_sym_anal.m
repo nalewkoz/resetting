@@ -1,5 +1,5 @@
 dt=0.01;
-eps=0.05;
+eps=0.08;
 M=10^3;
 
 alpha_tab=[2 1.8 1.6];
@@ -21,7 +21,7 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-r_tab2=1:0.1:5;
+r_tab2=min(r_tab):0.1:max(r_tab);
 meanTa=zeros(length(alpha_tab),length(r_tab));
 disp('Druga petla (calkowanie wzoru analitycznego)...');
 tic
