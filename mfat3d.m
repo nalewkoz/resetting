@@ -1,7 +1,7 @@
 function T=mfat3d(x)
 	alphap=2:-0.03:1.6-x/150;
 	r=[0.06:0.03:0.3 0.4:0.2:8];
-	r=r/x^1.5;
+	r=r/x^1.9;
 
 	Na=length(alphap);
 	Nr=length(r);
