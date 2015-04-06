@@ -1,5 +1,5 @@
 dt=0.01;
-eps=0.01;
+eps=0.05;
 M=10^3;
 
 alpha_tab=[2 1.8 1.6];
@@ -36,5 +36,5 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-save('data4comparison.mat','meanTs','meanTa','r_tab','r_tab2','alpha_tab');
+save('data/data4comparison.mat','meanTs','meanTa','r_tab','r_tab2','alpha_tab');
 
