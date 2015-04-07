@@ -13,7 +13,7 @@ set(gca,'XTick',x_tab)
 
 xlabel('x','fontsize',fs_label);
 ylabel('log <T>','fontsize',fs_label);
-%grid on
+grid on
 axis tight
 title('Blah')
 printpdf(h,'graphics/mfat_comp_x');
