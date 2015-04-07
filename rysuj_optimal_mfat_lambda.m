@@ -19,6 +19,7 @@ h1=figure
 plot(x,T_glopt,'.');
 ylabel('T^*','fontsize',14);
 xlabel('\lambda_t','fontsize',14);
+grid on
 h2=figure
 hold on
 plot(log(x),log(r_glopt),'.');
@@ -26,10 +27,13 @@ plot(log(x),log(r_glopt),'.');
 plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
 ylabel('log(r^*)','fontsize',14);
 xlabel('log(\lambda_t)','fontsize',14);
+set(gca,'XTick',[-5 -3 -1 1 3 5])
+grid on
 h3=figure
 plot(x,alpha_glopt,'.');
 ylabel('\alpha^*','fontsize',14);
 xlabel('\lambda_t','fontsize',14);
+grid on
 printpdf(h1,'mfat_fair_lambda_T');
 printpdf(h2,'mfat_fair_lambda_r');
 printpdf(h3,'mfat_fair_lambda_alpha');

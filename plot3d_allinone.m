@@ -7,7 +7,7 @@ function [h, fname]=plot3d_allinone(xx)
     r_ticks=[2 5 8; 0.02 0.06 0.1; 0.01 0.02 0.03; 0.5*10^(-3) 1*10^(-3) 1.5*10^(-3)];
     
     for i=1:length(xx)
-        load(sprintf('ploty3d/data3dplots_%.1f.mat',xx(i)));
+        load(sprintf('graphics/ploty3d/data3dplots_%.1f.mat',xx(i)));
         subplot(2,2,i);
         surfc(r,alphap,T);%,'EdgeColor','none');
         colormap(bone);

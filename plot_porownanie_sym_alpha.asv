@@ -1,0 +1,6 @@
+load('data/data4comparison.mat');
+n=1;
+figure
+hold on
+plot(r_tab2,meanTa(n,:),'r');
+plot(r_tab,meanTs(n,:),'b.','MarkerSize',12);

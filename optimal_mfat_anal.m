@@ -118,16 +118,20 @@ h1=figure
 plot(x,T_glopt,'.');
 ylabel('T^*','fontsize',14);
 xlabel('x','fontsize',14);
+grid on
 h2=figure
 hold on
 plot(log(x),log(r_glopt),'.');
 plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
 ylabel('log(r^*)','fontsize',14);
 xlabel('log(x)','fontsize',14);
+set(gca,'XTick',[-5 -3 -1 1 3 5])
+grid on
 h3=figure
 plot(x,alpha_glopt,'.');
 ylabel('\alpha^*','fontsize',14);
 xlabel('x','fontsize',14);
+grid on
 printpdf(h1,'mfat_fair_T');
 printpdf(h2,'mfat_fair_r');
 printpdf(h3,'mfat_fair_alpha');
