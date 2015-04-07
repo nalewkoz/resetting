@@ -1,12 +1,13 @@
 dt=0.01;
-eps=[0.095 0.06 0.03];
-M=10^5;
+eps=[0.093 0.056 0.028];
+M=10^3;
 
 alpha_tab=[2 1.8 1.6];
 x0=1;
 r_tab=0.1:0.5:10;
 
 meanTs=zeros(length(alpha_tab),length(r_tab));
+sdevT=zeros(size(meanTs));
 disp('Pierwsza petla (symulacje)...');
 tic
 for i=1:length(alpha_tab)
@@ -16,7 +17,7 @@ for i=1:length(alpha_tab)
 	D=1/lambda^a;
 	for j=1:length(r_tab)
 		fprintf('\ralpha=%.1f r=%.2f',a,r_tab(j));
-		meanTs(i,j)=mfat_sym_alpha(D,x0,r_tab(j),a,dt,eps(i),M);
+		[meanTs(i,j) sdevT(i,j)]=mfat_sym_alpha(D,x0,r_tab(j),a,dt,eps(i),M);
 	end
 end
 fprintf('\n');
@@ -36,5 +37,5 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-save('data/data4comparison.mat','meanTs','meanTa','r_tab','r_tab2','alpha_tab');
+save('data/data4comparison.mat','meanTs','sdevT','meanTa','r_tab','r_tab2','alpha_tab');
 
