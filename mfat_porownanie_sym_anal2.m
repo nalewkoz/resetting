@@ -1,13 +1,13 @@
 dt=0.01;
 x0=1;
 eps0=[0.07 0.08 0.09 0.1 0.11 0.12];
-M=10^4;
+M=10^3;
 
 r=1;
 
 alpha_tab=[2 1.8 1.6 1.4];
 eps=zeros(1,length(alpha_tab));
-x_tab=0.1:0.6:3.1;
+x_tab=0.1:0.3:3.1;
 
 T0=zeros(1,length(eps0));
 meanTs=zeros(length(alpha_tab),length(x_tab));
