@@ -41,7 +41,7 @@ function [meanT sdevT]=mfat_sym_alpha(D,x0,r,alpha,dt,eps,M)
   
 %     plot(czasy,traj);
     meanT=mean(T);
-    sdevT=sqrt(sum( (T-meanT).^2 )/(length(T)-1));
+    sdevT=sqrt(mean( (T-meanT).^2 )/(length(T)-1));
 end
 
 function Y=rand_cauchy(M,N)
