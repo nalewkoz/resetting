@@ -7,7 +7,7 @@ r=1;
 
 alpha_tab=[2 1.8 1.6 1.4];
 eps=zeros(1,length(alpha_tab));
-x_tab=0.1:0.3:3.1;
+x_tab=0.1:0.3:4;
 
 T0=zeros(1,length(eps0));
 meanTs=zeros(length(alpha_tab),length(x_tab));
