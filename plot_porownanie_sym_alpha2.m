@@ -1,6 +1,6 @@
 fs_label=14;
 
-load('data/data4comparison2.mat');
+load('data/data4comparison3.mat');
 h=figure
 hold on
 plot(x_tab2,log(meanTa(:,:)),'b');

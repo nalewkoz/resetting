@@ -40,7 +40,7 @@ end
 fprintf('\n');
 toc
 x_tab2=min(x_tab):0.1:2*max(x_tab);
-meanTa=zeros(length(alpha_tab),length(x_tab));
+meanTa=zeros(length(alpha_tab),length(x_tab2));
 disp('Druga petla (calkowanie wzoru analitycznego)...');
 tic
 for i=1:length(alpha_tab)
