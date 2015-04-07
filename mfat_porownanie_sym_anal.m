@@ -1,10 +1,10 @@
 dt=0.01;
-eps=[0.086 0.056 0.028 0.011];
+eps=[0.088 0.054 0.028 0.01];
 M=10^4;
 
 alpha_tab=[2 1.8 1.6 1.4];
 x0=1;
-r_tab=[0.05 1:2:13];
+r_tab=[0.1 1:2:13];
 
 meanTs=zeros(length(alpha_tab),length(r_tab));
 sdevT=zeros(size(meanTs));
