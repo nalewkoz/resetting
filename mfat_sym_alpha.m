@@ -1,4 +1,4 @@
-function meanT=mfat_sym_alpha(D,x0,r,alpha,dt,eps,M)
+function [meanT sdevT]=mfat_sym_alpha(D,x0,r,alpha,dt,eps,M)
     
     X=zeros(M,2)+x0;
     over=zeros(M,1);
@@ -41,6 +41,7 @@ function meanT=mfat_sym_alpha(D,x0,r,alpha,dt,eps,M)
   
 %     plot(czasy,traj);
     meanT=mean(T);
+    sdevT=sqrt(sum( (T-meanT).^2 )/(length(T)-1));
 end
 
 function Y=rand_cauchy(M,N)
