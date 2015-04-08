@@ -10,9 +10,9 @@ hold on
 plot(r_tab2,log(meanTa(:,:)),'k');
 plot(r_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
 
-for i=1:size(meanTs,1)
-    errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
-end
+%for i=1:size(meanTs,1)
+%    errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
+%end
 set(gca,'XTick',r_tab(1:end) )
 set(gca,'FontSize',8)
 
@@ -27,16 +27,23 @@ axis([-1 max(r_tab2) 0.5 log(max(max(meanTs)))+0.1])
 load('data/data4comparison3.mat');
 subplot(1,2,1);
 hold on
-plot(x_tab2,log(meanTa(:,:)),'k');
-plot(x_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
+h1=plot(x_tab2,log(meanTa(:,:)),'k');
+h2=plot(x_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
 
- for i=1:size(meanTs,1)
-     errorbar(x_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
- end
+%for i=1:size(meanTs,1)
+%    errorbar(x_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
+%end
 set(gca,'XTick',x_tab(1:end))
 set(gca,'FontSize',8)
 xlabel('x','fontsize',fs_label);
 ylabel('log <T>','fontsize',fs_label);
 axis tight
 %M
+hL=legend([h1(1) h2(1)],{'Analytical formula','Monte Carlo'});
+
+newPosition = [0.4 0.3 0.01 0.01];
+newUnits = 'normalized';
+set(hL,'Position', newPosition,'Units', newUnits);
+
+
 printpdf(h,'graphics/mfat_comp_r');
