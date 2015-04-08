@@ -37,5 +37,5 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-save('data/data4comparison.mat','meanTs','sdevT','meanTa','r_tab','r_tab2','alpha_tab');
+save('data/data4comparison.mat','meanTs','sdevT','meanTa','r_tab','r_tab2','alpha_tab','M');
 

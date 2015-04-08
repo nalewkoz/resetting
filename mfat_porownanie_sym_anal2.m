@@ -7,7 +7,7 @@ r=1;
 
 alpha_tab=[2 1.8 1.6 1.4];
 eps=zeros(1,length(alpha_tab));
-x_tab=0.1:0.3:3;
+x_tab=0.1:0.3:4;
 
 T0=zeros(1,length(eps0));
 meanTs=zeros(length(alpha_tab),length(x_tab));
@@ -39,7 +39,7 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-x_tab2=min(x_tab):0.1:2*max(x_tab);
+x_tab2=[0.05 min(x_tab):0.1:max(x_tab) x_tab+0.1];
 meanTa=zeros(length(alpha_tab),length(x_tab2));
 disp('Druga petla (calkowanie wzoru analitycznego)...');
 tic
@@ -54,5 +54,5 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-save('data/data4comparison3.mat','meanTs','sdevT','meanTa','x_tab','x_tab2','alpha_tab','r','eps','dt');
+save('data/data4comparison3.mat','meanTs','sdevT','meanTa','x_tab','x_tab2','alpha_tab','r','eps','dt','M');
 
