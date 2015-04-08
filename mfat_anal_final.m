@@ -9,8 +9,8 @@ function y=f0(alpha)
     y=a1*gamma(a1)*gamma(1-a1);
 end
 function S=f(x,alpha)
-    N1=10^4;    % Na tyle dzielimy okres cosinusa
-    N2=200;      % Tyle okresow minimum musimy przejsc
+    N1=4*10^4;    % Na tyle dzielimy okres cosinusa
+    N2=800;      % Tyle okresow minimum musimy przejsc
     eps=10^(-4);% Oraz tyle razy przynajmniej musi spasc wartosc obwoluty
    
     T_cos=2*pi/x;
