@@ -13,8 +13,8 @@ plot(r_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
 for i=1:size(meanTs,1)
     errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
 end
-set(gca,'XTick',r_tab(1:end) )
-set(gca,'FontSize',8)
+set(gca,'XTick',r_tab(2:end) )
+set(gca,'FontSize',1)
 
 xlabel('r','fontsize',fs_label);
 %ylabel('log <T>','fontsize',fs_label);
@@ -33,8 +33,8 @@ plot(x_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
  for i=1:size(meanTs,1)
      errorbar(x_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
  end
-set(gca,'XTick',x_tab(1:end))
-set(gca,'FontSize',8)
+set(gca,'XTick',[x_tab(1) x_tab(3:end)])
+
 xlabel('x','fontsize',fs_label);
 ylabel('log <T>','fontsize',fs_label);
 axis tight
