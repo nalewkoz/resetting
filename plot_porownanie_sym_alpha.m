@@ -22,7 +22,7 @@ ylabel('log <T>','fontsize',fs_label);
 % Drugi rysunek
 fs_label=14;
 
-load('data/data4comparison3.mat');
+load('data/data4comparison2.mat');
 subplot(1,2,1);
 hold on
 plot(x_tab2,log(meanTa(:,:)),'b');
