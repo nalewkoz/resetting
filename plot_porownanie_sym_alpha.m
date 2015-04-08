@@ -2,7 +2,7 @@ fs_label=14;
 h=figure;
 % Pierwszy rysunek
 
-load('data/data4comparison.mat');
+load('data/data4comparison_mfpt.mat');
 n=1;
 
 subplot(1,2,2);
@@ -39,4 +39,4 @@ xlabel('x','fontsize',fs_label);
 ylabel('log <T>','fontsize',fs_label);
 axis tight
 %M
-printpdf(h,'graphics/mfat_comp_r');
+printpdf(h,'graphics/mfat_comp_r_mfpt');
