@@ -1,13 +1,13 @@
 dt=0.01;
 x0=1;
 eps0=[0.07 0.08 0.09 0.1 0.11 0.12];
-M=10^3;
+M=10^5;
 
 r=1;
 
 alpha_tab=[2 1.8 1.6 1.4];
 eps=zeros(1,length(alpha_tab));
-x_tab=[0.2 0.5:0.5:4];
+x_tab=[0.2 0.6 1:0.5:4];
 
 T0=zeros(1,length(eps0));
 meanTs=zeros(length(alpha_tab),length(x_tab));
@@ -39,7 +39,7 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-x_tab2=[0.1 0.15 min(x_tab):0.05:max(x_tab) max(x_tab)+0.1];
+x_tab2=[0.1 0.15 min(x_tab):0.05:max(x_tab) max(x_tab)+0.1:0.1:max(x_tab)+0.5];
 meanTa=zeros(length(alpha_tab),length(x_tab2));
 disp('Druga petla (calkowanie wzoru analitycznego)...');
 tic
