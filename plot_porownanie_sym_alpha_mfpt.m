@@ -1,3 +1,8 @@
+% 1) WA¯NY WNIOSEK: WOLNA ZBIE¯NOŒÆ MFPT w dt [biased estimator] KOREKTA KONIECZNA!
+% st¹d: Przyda siê korekta gdy bêdziemy chcieli wykorzystywaæ to do subdyfuzji!
+% 2)Korekta dla Levy'ch? Korekta dla dochodzenia do odcinka?
+% 3)Kod dla MFPT jest na pewno nieoptymalny (bezsensowne kopiowanie kolumn X)
+
 fs_label=14;
 h=figure;
 % Pierwszy rysunek
@@ -7,8 +12,10 @@ n=1;
 
 subplot(1,2,2);
 hold on
-plot(r_tab2,log(meanTa(:,:)),'k');
-plot(r_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
+% plot(r_tab2,log(meanTa(:,:)),'k');
+% plot(r_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
+plot(r_tab2,meanTa(1,:),'k');
+plot(r_tab,meanTs(1,:),'k.','MarkerSize',10);
 
 %for i=1:size(meanTs,1)
 %    errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
@@ -18,9 +25,7 @@ set(gca,'FontSize',8)
 
 xlabel('r','fontsize',fs_label);
 %ylabel('log <T>','fontsize',fs_label);
-axis([-1 max(r_tab2) 0.5 log(max(max(meanTs)))+0.1])
-%M
-%legend('Analytical formula','Monte Carlo');
+%axis([-1 max(r_tab2) 0.5 log(max(max(meanTs)))+0.1])
 
 % Drugi rysunek
 
@@ -39,9 +44,6 @@ xlabel('x','fontsize',fs_label);
 ylabel('log <T>','fontsize',fs_label);
 axis tight
 %M
-<<<<<<< HEAD
-printpdf(h,'graphics/mfat_comp_r_mfpt');
-=======
 hL=legend([h1(1) h2(1)],{'Analytical formula','Monte Carlo'});
 
 newPosition = [0.4 0.3 0.01 0.01];
@@ -49,5 +51,4 @@ newUnits = 'normalized';
 set(hL,'Position', newPosition,'Units', newUnits);
 
 
-printpdf(h,'graphics/mfat_comp_r');
->>>>>>> e0d6a6ed406ee01c3c12194f31fd8304c9145be7
+printpdf(h,'graphics/mfat_comp_r_mfpt');
