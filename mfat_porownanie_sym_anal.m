@@ -1,4 +1,4 @@
-dt=0.1;
+dt=0.03;
 %eps=[0.088 0.056 0.028 0.0105];
 load('data/data4comparison_x1.mat','eps');
 M=10^5;
@@ -6,7 +6,7 @@ M=10^5;
 alpha_tab=[2 1.8 1.6 1.4];
 %alpha_tab=[2 1.8];
 x0=1;a
-r_tab=[0.1 1:2:9];
+r_tab=[0.1 1:2:13];
 
 meanTs=zeros(length(alpha_tab),length(r_tab));
 sdevT=zeros(size(meanTs));
