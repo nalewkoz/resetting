@@ -1,12 +1,12 @@
-dt=0.001;
+dt=0.1;
 %eps=[0.088 0.056 0.028 0.0105];
-load('data/data4comparison_x3.mat','eps');
+load('data/data4comparison_x1.mat','eps');
 M=10^5;
 
 alpha_tab=[2 1.8 1.6 1.4];
 %alpha_tab=[2 1.8];
 x0=1;a
-r_tab=[0.1 1:2:13];
+r_tab=[0.1 1:2:9];
 
 meanTs=zeros(length(alpha_tab),length(r_tab));
 sdevT=zeros(size(meanTs));
@@ -40,5 +40,5 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-save('data/data4comparison_r3.mat','meanTs','sdevT','meanTa','r_tab','r_tab2','alpha_tab','M','dt','eps');
+save('data/data4comparison_r1.mat','meanTs','sdevT','meanTa','r_tab','r_tab2','alpha_tab','M','dt','eps');
 
