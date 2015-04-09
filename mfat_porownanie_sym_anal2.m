@@ -1,13 +1,15 @@
-dt=0.01;
+dt=0.001;
 x0=1;
 eps0=[0.07 0.08 0.09 0.1 0.11 0.12];
-M=10^5;
+eps0=eps0/sqrt(10);
+
+M=10^4;
 
 r=1;
 
 alpha_tab=[2 1.8 1.6 1.4];
 eps=zeros(1,length(alpha_tab));
-x_tab=[0.2 0.6 1:0.5:4];
+x_tab=[0.2 0.6];% 1:0.5:4];
 
 T0=zeros(1,length(eps0));
 meanTs=zeros(length(alpha_tab),length(x_tab));
@@ -54,5 +56,5 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-save('data/data4comparison3.mat','meanTs','sdevT','meanTa','x_tab','x_tab2','alpha_tab','r','eps','dt','M');
+save('data/data4comparison_x3.mat','meanTs','sdevT','meanTa','x_tab','x_tab2','alpha_tab','r','eps','dt','M');
 
