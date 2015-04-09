@@ -1,7 +1,7 @@
 dt=0.001;
 %eps=[0.088 0.056 0.028 0.0105];
 load('data/data4comparison_x3.mat','eps');
-M=10^3;
+M=10^5;
 
 alpha_tab=[2 1.8 1.6 1.4];
 %alpha_tab=[2 1.8];
