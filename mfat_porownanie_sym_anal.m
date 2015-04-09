@@ -1,9 +1,9 @@
-dt=0.0001;
+dt=0.001;
 eps=[0.088 0.056 0.028 0.0105];
-M=10^3;
+M=10^4;
 
-%alpha_tab=[2 1.8 1.6 1.4];
-alpha_tab=[2 1.8];
+alpha_tab=[2 1.8 1.6 1.4];
+%alpha_tab=[2 1.8];
 x0=1;
 r_tab=[0.1 1:2:13];
 
@@ -18,8 +18,8 @@ for i=1:length(alpha_tab)
 	D=1/lambda^a;
 	for j=1:length(r_tab)
 		fprintf('\ralpha=%.1f r=%.2f',a,r_tab(j));
-		%[meanTs(i,j) sdevT(i,j)]=mfat_sym_alpha(D,x0,r_tab(j),a,dt,eps(i),M);
-		[meanTs(i,j) sdevT(i,j)]=mfpt_sym_subdiff(D,x0,r_tab(j),a,1,dt,M);
+		[meanTs(i,j) sdevT(i,j)]=mfat_sym_alpha(D,x0,r_tab(j),a,dt,eps(i),M);
+		%[meanTs(i,j) sdevT(i,j)]=mfpt_sym_subdiff(D,x0,r_tab(j),a,1,dt,M);
 	end
 end
 fprintf('\n');
@@ -39,5 +39,5 @@ for i=1:length(alpha_tab)
 end
 fprintf('\n');
 toc
-save('data/data4comparison_mfpt.mat','meanTs','sdevT','meanTa','r_tab','r_tab2','alpha_tab','M');
+save('data/data4comparison4.mat','meanTs','sdevT','meanTa','r_tab','r_tab2','alpha_tab','M','dt');
 
