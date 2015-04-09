@@ -14,8 +14,8 @@ subplot(1,2,2);
 hold on
 % plot(r_tab2,log(meanTa(:,:)),'k');
 % plot(r_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
-plot(r_tab2,meanTa(1,:),'k');
-plot(r_tab,meanTs(1,:),'k.','MarkerSize',10);
+plot(r_tab2,meanTa(:,:),'k');
+plot(r_tab,meanTs(:,:),'k.','MarkerSize',10);
 
 %for i=1:size(meanTs,1)
 %    errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');

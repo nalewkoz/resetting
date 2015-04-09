@@ -2,17 +2,17 @@ fs_label=14;
 h=figure;
 % Pierwszy rysunek
 
-load('data/data4comparison.mat');
+load('data/data4comparison_r3.mat');
 n=1;
 
 subplot(1,2,2);
 hold on
 plot(r_tab2,log(meanTa(:,:)),'k');
-plot(r_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
+%plot(r_tab,log(meanTs(:,:)),'k.','MarkerSize',10);
 
-% for i=1:size(meanTs,1)
-%     errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
-% end
+ for i=1:size(meanTs,1)
+     errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
+ end
 set(gca,'XTick',r_tab(1:end) )
 set(gca,'FontSize',8)
 
@@ -46,4 +46,4 @@ newUnits = 'normalized';
 set(hL,'Position', newPosition,'Units', newUnits);
 
 
-printpdf(h,'graphics/mfat_comp_r');
+printpdf(h,'graphics/mfat_comp_xr');
