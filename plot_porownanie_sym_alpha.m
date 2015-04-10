@@ -44,7 +44,7 @@ xlabel('x','fontsize',fs_label);
 ylabel('log <T>','fontsize',fs_label);
 axis tight
 %M
-hL=legend([h1(1) h2(1,:)],{'Analytical formula','Monte Carlo \deltat=0.03','Monte Carlo \deltat=0.01','Monte Carlo \deltat=0.001'});
+hL=legend([h1(1) h2(1,:)],{'Analytical formula','Monte Carlo dt=0.03','Monte Carlo dt=0.01','Monte Carlo dt=0.001'});
 
 newPosition = [0.38 0.3 0.01 0.01];
 newUnits = 'normalized';
