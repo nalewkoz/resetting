@@ -1,7 +1,7 @@
 fs_label=14;
 h=figure;
 znaczki=['ko';'k+';'k.'];
-wielkosci=[8;8;10];
+wielkosci=[7;7;10];
 % Pierwszy rysunek
 n=1;
 subplot(1,2,2);
