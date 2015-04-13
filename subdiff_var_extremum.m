@@ -7,7 +7,7 @@ function y=subdiff_var_extremum(mu,dx,xmax)
 	dfv=fv-ifv;
 	dfv=dfv(1:end-1).*dfv(2:end);
 	dfv=find(dfv<0);
-	x0=xciag(dfv);
+	x0=xciag(dfv)
 
 	h=figure;
         hold on
