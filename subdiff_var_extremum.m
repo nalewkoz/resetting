@@ -16,6 +16,7 @@ function y=subdiff_var_extremum(mu,dx,xmax)
         plot(xciag,log(fv),'r');
         plot(xciag,log(ifv),'k');
 	plot(xciag,log(fvhyper));
+	plot(xciag,log(exp(xciag)-1),'y')
 	plot(x0,log(fv(dfv)),'rx','MarkerSize',10);
         printpdf(h,sprintf('graphics/subdiff_max%.0f.pdf',10*mu));
 
