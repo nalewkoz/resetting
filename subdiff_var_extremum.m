@@ -1,7 +1,8 @@
 function y=subdiff_var_extremum(mu,dx,xmax)
 	xciag=0:dx:xmax;
+	xciag(1)=dx;
 	fv=f(xciag,mu);
-	fv(1)=fv(2);
+	%fv(1)=fv(2);
 	ifv=cumtrapz(fv)*dx;
 
 	dfv=fv-ifv;
@@ -14,7 +15,7 @@ function y=subdiff_var_extremum(mu,dx,xmax)
         plot(xciag,log(fv),'r');
         plot(xciag,log(ifv),'k');
 
-	plot(x0,fv(dfv),'rx','MarkerSize',10);
+	plot(x0,log(fv(dfv)),'rx','MarkerSize',10);
         printpdf(h,sprintf('graphics/subdiff_max%.0f.pdf',10*mu));
 
 	fv1=hypergeom([],[1+mu],xciag)+1/mu-1;
