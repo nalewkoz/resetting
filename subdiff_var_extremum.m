@@ -10,7 +10,7 @@ function y=subdiff_var_extremum(mu,dx,xmax)
 	dfv=find(dfv<0);
 	x0=xciag(dfv)
 	
-	fvhyper=1.1*(xciag.^mu).*(1/mu-1+hypergeom([],[1+mu],xciag));
+	fvhyper=(xciag.^mu).*(1/mu-1+hypergeom([],[1+mu],xciag));
 	h=figure;
         hold on
         plot(xciag,log(fv),'r');
