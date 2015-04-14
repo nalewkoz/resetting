@@ -11,11 +11,21 @@ function y=subdiff_var_extremum(mu,dx,xmax)
 
 	h=figure;
         hold on
-        plot(xciag,fv,'r');
-        plot(xciag,ifv,'k');
+        plot(xciag,log(fv),'r');
+        plot(xciag,log(ifv),'k');
+
 	plot(x0,fv(dfv),'rx','MarkerSize',10);
         printpdf(h,sprintf('graphics/subdiff_max%.0f.pdf',10*mu));
 
+	fv1=hypergeom([],[1+mu],xciag)+1/mu-1;
+	%fv1=fv1-(2-mu)/(1-mu);
+        fv1=fv1.*xciag.*exp(-xciag)-1;
+	fv2=fv1(1:end-1).*fv1(2:end);
+        fv2=find(fv2<0);
+        x02=xciag(fv2)
+	h=figure
+	plot(xciag, fv1,'.r');
+	printpdf(h,sprintf('graphics/subdiff_max2%.0f.pdf',10*mu));
 end
 
 function y=f(x,mu)
