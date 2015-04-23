@@ -1,6 +1,6 @@
-function [Ta Ts ctab]=potential_exp_mfat(dt,M)
+function [Ta Ts sdTs ctab]=potential_exp_mfat(dt,M)
 	%ctab=0.35:0.01:0.5;
-	ctab=[0.1:0.1:1.5];
+	ctab=[-2:0.3:3.1];
 	Nc=length(ctab);
 	Ta=zeros(Nc,1);
 	Ts=zeros(Nc,1);
@@ -15,7 +15,7 @@ function [Ta Ts ctab]=potential_exp_mfat(dt,M)
 	end
 	toc
 	[ctab' Ta Ts 3*sdTs]
-
+	save('data/opt_potential_delta.mat','Ta' ,'Ts','sdTs', 'ctab','dt','M'); 
 end
 function y=mfat_linear_mc(c,dt,M)
 	T=zeros(M,1);
