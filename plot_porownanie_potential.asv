@@ -1,0 +1,8 @@
+fs_label=14;
+h=figure;
+znaczki=['ko';'k+';'k.'];
+wielkosci=[6;6];
+load('data/opt_potential_exp.mat');
+plot(ctab,znaczki(1,:),'MarkerSize',wielkosci(1));
+load('data/opt_potential_delta.mat');
+plot(ctab,znaczki(1,:),'MarkerSize',wielkosci(1));
