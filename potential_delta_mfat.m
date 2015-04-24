@@ -1,6 +1,6 @@
-function [Ta Ts sdTs ctab]=potential_delta_mfat(dt,M)
+function [Ta Ts sdTs ctab]=potential_delta_mfat(ctab,dt,M)
 	%ctab=0.35:0.01:0.5;
-	ctab=[-2:0.3:3.1];
+	%ctab=[-2:0.3:3.1];
 	Nc=length(ctab);
 	Ta=zeros(Nc,1);
 	Ts=zeros(Nc,1);
