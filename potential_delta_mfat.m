@@ -15,7 +15,7 @@ function [Ta Ts sdTs ctab]=potential_delta_mfat(dt,M)
 	end
 	toc
 	[ctab' Ta Ts 3*sdTs]
-	save('data/opt_potential_delta.mat','Ta' ,'Ts','sdTs', 'ctab','dt','M');
+	save('data/opt_potential_delta2.mat','Ta' ,'Ts','sdTs', 'ctab','dt','M');
 
 end
 function y=mfat_linear_mc(c,dt,M)
