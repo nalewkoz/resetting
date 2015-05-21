@@ -3,7 +3,7 @@ h=figure;
 hold on;
 znaczki=['ro';'g+'];
 wielkosci=[6;6];
-load('data/opt_potential_delta.mat');
+load('data/opt_potential_delta2.mat');
 errorbar(ctab,Ts,3*sdTs,znaczki(2,:),'MarkerSize',wielkosci(2));
 load('data/opt_potential_exp.mat');
 errorbar(ctab,Ts/4,3*sdTs/4,znaczki(1,:),'MarkerSize',wielkosci(1));
@@ -16,4 +16,4 @@ ylabel('MFPT','fontsize',fs_label);
 
 legend('Monte Carlo: x_t=\pm1','Monte Carlo (rescaled): x_t Laplace-distributed','Analytical prediction');
 
-printpdf(h,'graphics/potential_comp');
+printpdf(h,'graphics/potential_comp2');
