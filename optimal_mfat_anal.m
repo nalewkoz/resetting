@@ -141,22 +141,24 @@ printpdf(h3,'graphics/mfat_fair_alpha');
 
 h=figure;
 subplot(2,2,1);
-plot(x,T_glopt,'.');
+plot(x,T_glopt,'k.');
 ylabel('T^*','fontsize',14);
 xlabel('x','fontsize',14);
 set(gca,'XTick',[0 20 40 60 80 100])
 grid on
 subplot(2,2,2);
 hold on
-plot(log(x),log(r_glopt),'.');
+plot(log(x)/log(10),log(r_glopt)/log(10),'k.');
 %plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
-plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
-ylabel('log(r^*)','fontsize',14);
-xlabel('log(x)','fontsize',14);
-set(gca,'XTick',[-5 -3 -1 1 3 5])
+plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
+ylabel('log_{10}(r^*)','fontsize',14);
+xlabel('log_{10}(x)','fontsize',14);
+%set(gca,'XTick',[-5 -3 -1 1 3 5])
+set(gca,'XTick',[-2 -1 0 1 2])
+set(gca,'box','on')
 grid on
 subplot(2,1,2);
-plot(x,alpha_glopt,'.');
+plot(x,alpha_glopt,'k.');
 ylabel('\alpha^*','fontsize',14);
 xlabel('x','fontsize',14);
 grid on
