@@ -1,6 +1,6 @@
 load('data_min_mfat_anal_student_fair_huge2');
 
-x=[0.00001, 0.0001, 0.001:0.001:0.024, 0.025:0.01:1, 1:0.1:100] ;
+x=[10^(-7), 0.00001, 0.0001, 0.001:0.001:0.024, 0.025:0.01:1, 1:0.1:100] ;
 Na=length(alpha_tab);
 Nx=length(x);
 Tmin_matrix=zeros(Na,Nx);
@@ -17,28 +17,28 @@ for i=1:Nx
     alpha_glopt(i)=alpha_tab(I(i));
 end
 
-h1=figure
-plot(x,T_glopt,'.');
-ylabel('T^*','fontsize',14);
-xlabel('\lambda_t','fontsize',14);
-grid on
-h2=figure
-hold on
-plot(log(x),log(r_glopt),'.');
-%plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
-%plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
-ylabel('log(r^*)','fontsize',14);
-xlabel('log(\lambda_t)','fontsize',14);
-set(gca,'XTick',[-5 -3 -1 1 3 5])
-grid on
-h3=figure
-plot(x,alpha_glopt,'.');
-ylabel('\alpha^*','fontsize',14);
-xlabel('\lambda_t','fontsize',14);
-grid on
-printpdf(h1,'graphics/mfat_fair_student27_T');
-printpdf(h2,'graphics/mfat_fair_student27_r');
-printpdf(h3,'graphics/mfat_fair_student27_alpha');
+%h1=figure
+%plot(x,T_glopt,'.');
+%ylabel('T^*','fontsize',14);
+%xlabel('\lambda_t','fontsize',14);
+%grid on
+%h2=figure
+%hold on
+%plot(log(x),log(r_glopt),'.');
+%%plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
+%%plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
+%ylabel('log(r^*)','fontsize',14);
+%xlabel('log(\lambda_t)','fontsize',14);
+%set(gca,'XTick',[-5 -3 -1 1 3 5])
+%grid on
+%h3=figure
+%plot(x,alpha_glopt,'.');
+%ylabel('\alpha^*','fontsize',14);
+%xlabel('\lambda_t','fontsize',14);
+%grid on
+%printpdf(h1,'graphics/mfat_fair_student27_T');
+%printpdf(h2,'graphics/mfat_fair_student27_r');
+%printpdf(h3,'graphics/mfat_fair_student27_alpha');
 
 h=figure;
 subplot(2,2,1);
@@ -54,7 +54,8 @@ plot(log(x),log(r_glopt),'.');
 %plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
 ylabel('log(r^*)','fontsize',14);
 xlabel('log(\lambda_t)','fontsize',14);
-set(gca,'XTick',[-5 -3 -1 1 3 5])
+set(gca,'XTick',[-7 -5 -3 -1 1 3 5])
+axis([-7 5 -10 10]);
 grid on
 subplot(2,1,2);
 plot(x,alpha_glopt,'.');
