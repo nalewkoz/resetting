@@ -1,6 +1,6 @@
 load('data_min_mfat_anal_student_fair_huge2');
 
-x=[0.001:0.001:0.01, 0.02:0.01:0.2, 0.3:0.1:3, 4:1:100];
+x=[0.001:0.001:0.02, 0.025:0.01:1, 1:0.1:100] ;
 Na=length(alpha_tab);
 Nx=length(x);
 Tmin_matrix=zeros(Na,Nx);
