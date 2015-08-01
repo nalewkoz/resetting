@@ -54,9 +54,9 @@ plot(log(x)/log(10),log(r_glopt)/log(10),'k.');
 %plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
 ylabel('log_{10}(r^*)','fontsize',14);
 xlabel('log_{10}(\lambda_t)','fontsize',14);
-set(gca,'XTick',[-3 -1 0 1 2])
+set(gca,'XTick',[-3 -2 -1 0 1 2])
 set(gca,'box','on');
-%axis([-3 5 -10 10]);
+axis([-3 2 -inf inf]);
 grid on
 subplot(2,1,2);
 plot(x,alpha_glopt,'k.');
