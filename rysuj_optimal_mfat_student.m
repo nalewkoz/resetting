@@ -1,4 +1,4 @@
-load('data_min_mfat_anal_student_fair_huge2');
+load('data_min_mfat_anal_student_fair_huge');
 
 x=[10^(-7), 10^(-6), 0.00001, 0.0001, 0.0005, 0.001:0.002:0.1, 0.11:0.02:3, 3:0.2:100] ;
 Na=length(alpha_tab);
@@ -64,7 +64,7 @@ ylabel('\alpha^*','fontsize',14);
 xlabel('\lambda_t','fontsize',14);
 grid on
 
-printpdf(h,'graphics/mfat_fair_student27_allinone');
+printpdf(h,'graphics/mfat_fair_student4_allinone');
 
 %size(T_glopt)
 %size(I)
