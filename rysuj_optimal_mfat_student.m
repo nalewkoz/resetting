@@ -1,6 +1,6 @@
 load('data_min_mfat_anal_student_fair_huge2');
 
-x=[0.0001:0.0003:0.0999, 0.01:0.01:100];
+x=[0.001:0.001:0.01, 0.02:0.01:0.2, 0.3:0.1:3, 4:1:100];
 Na=length(alpha_tab);
 Nx=length(x);
 Tmin_matrix=zeros(Na,Nx);
@@ -26,7 +26,7 @@ h2=figure
 hold on
 plot(log(x),log(r_glopt),'.');
 %plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
-plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
+%plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
 ylabel('log(r^*)','fontsize',14);
 xlabel('log(\lambda_t)','fontsize',14);
 set(gca,'XTick',[-5 -3 -1 1 3 5])
@@ -51,7 +51,7 @@ subplot(2,2,2);
 hold on
 plot(log(x),log(r_glopt),'.');
 %plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
-plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
+%plot(log(3.25),log(r_glopt(find(x==3.25))),'r+','MarkerSize',20);
 ylabel('log(r^*)','fontsize',14);
 xlabel('log(\lambda_t)','fontsize',14);
 set(gca,'XTick',[-5 -3 -1 1 3 5])
