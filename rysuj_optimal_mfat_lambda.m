@@ -1,4 +1,5 @@
-x=0.01:0.01:100;
+load('data/data_min_mfat_anal_lambda_fair_huge.mat');
+x=[0.01:0.01:0.1 0.2:0.1:3.2 3.25 3.3:0.1:4 5:1:100];
 Na=length(alpha_tab);
 Nx=length(x);
 Tmin_matrix=zeros(Na,Nx);
@@ -40,14 +41,14 @@ end
 
 h=figure;
 subplot(2,2,1);
-plot(x,T_glopt,'k.');
+plot(x,T_glopt,'k','linewidth',2);
 ylabel('T^*','fontsize',14);
 xlabel('\lambda_t','fontsize',14);
 set(gca,'XTick',[0 20 40 60 80 100])
 grid on
 subplot(2,2,2);
 hold on
-plot(log(x)/log(10),log(r_glopt)/log(10),'k.');
+plot(log(x)/log(10),log(r_glopt)/log(10),'k','linewidth',2);
 %plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
 plot(log(3.25)/log(10),log(r_glopt(find(x==3.25)))/log(10),'k+','MarkerSize',20);
 ylabel('log_{10}(r^*)','fontsize',14);
@@ -56,7 +57,7 @@ set(gca,'XTick',[-2 -1 0 1 2])
 set(gca,'box','on')
 grid on
 subplot(2,1,2);
-plot(x,alpha_glopt,'k.');
+plot(x,alpha_glopt,'k','linewidth',2);
 ylabel('\alpha^*','fontsize',14);
 xlabel('\lambda_t','fontsize',14);
 grid on

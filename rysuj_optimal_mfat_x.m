@@ -1,4 +1,6 @@
-x=[0.01:0.01:0.1 0.2:0.1:100];
+load('data/data_min_mfat_anal_fair1_huge.mat');
+
+x=[0.01:0.01:0.1 0.2:0.1:10.7 10.77 10.8:0.1:11.5 12:1:100];
 Na=length(alpha_tab);
 Nx=length(x);
 Tmin_matrix=zeros(Na,Nx);
@@ -49,7 +51,7 @@ subplot(2,2,2);
 hold on
 plot(log(x)/log(10),log(r_glopt)/log(10),'k','linewidth',2);
 %plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
-plot(log(10.8)/log(10),log(r_glopt(find(x==10.8)))/log(10),'k+','MarkerSize',20);
+plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
 ylabel('log_{10}(r^*)','fontsize',14);
 xlabel('log_{10}(x)','fontsize',14);
 axis([-2 2 -4 4]);
