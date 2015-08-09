@@ -40,14 +40,14 @@ end
 
 h=figure;
 subplot(2,2,1);
-plot(x,T_glopt,'k');
+plot(x,T_glopt,'k','linewidth',2);
 ylabel('T^*','fontsize',14);
 xlabel('x','fontsize',14);
 set(gca,'XTick',[0 20 40 60 80 100])
 grid on
 subplot(2,2,2);
 hold on
-plot(log(x)/log(10),log(r_glopt)/log(10),'k');
+plot(log(x)/log(10),log(r_glopt)/log(10),'k','linewidth',2);
 %plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
 plot(log(10.8)/log(10),log(r_glopt(find(x==10.8)))/log(10),'k+','MarkerSize',20);
 ylabel('log_{10}(r^*)','fontsize',14);
@@ -58,7 +58,7 @@ set(gca,'YTick',[-4 -2 0 2 4]);
 set(gca,'box','on')
 grid on
 subplot(2,1,2);
-plot(x,alpha_glopt,'k');
+plot(x,alpha_glopt,'k','linewidth',2);
 ylabel('\alpha^*','fontsize',14);
 xlabel('x','fontsize',14);
 grid on
