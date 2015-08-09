@@ -1,4 +1,4 @@
-x=0.01:0.01:100;
+x=[0.01:0.01:0.1 0.2:0.1:100];
 Na=length(alpha_tab);
 Nx=length(x);
 Tmin_matrix=zeros(Na,Nx);
@@ -48,8 +48,8 @@ grid on
 subplot(2,2,2);
 hold on
 plot(log(x)/log(10),log(r_glopt)/log(10),'k.');
-%plot(log(10.77),log(r_glopt(find(x==10.77))),'r+','MarkerSize',20);
-plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
+%plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
+plot(log(10.8)/log(10),log(r_glopt(find(x==10.8)))/log(10),'k+','MarkerSize',20);
 ylabel('log_{10}(r^*)','fontsize',14);
 xlabel('log_{10}(x)','fontsize',14);
 axis([-2 2 -4 4]);
