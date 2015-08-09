@@ -52,7 +52,9 @@ plot(log(x)/log(10),log(r_glopt)/log(10),'k.');
 plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
 ylabel('log_{10}(r^*)','fontsize',14);
 xlabel('log_{10}(x)','fontsize',14);
-set(gca,'XTick',[-2 -1 0 1 2])
+axis([-2 2 -4 4]);
+set(gca,'XTick',[-2 -1 0 1 2]);
+set(gca,'YTick',[-4 -2 0 2 4]);
 set(gca,'box','on')
 grid on
 subplot(2,1,2);
