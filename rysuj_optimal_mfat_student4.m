@@ -1,4 +1,4 @@
-load('data_min_mfat_anal_student_fair_huge');
+load('data/data_min_mfat_anal_student_fair_huge2');
 
 x=[10^(-7), 10^(-6), 0.00001, 0.0001, 0.0005, 0.01:0.01:0.1, 0.2:0.1:3, 3:1:100] ;
 Na=length(alpha_tab);
