@@ -1,4 +1,4 @@
-load('data/data_min_mfat_anal_student_fair_huge2');
+load('data/data_min_mfat_anal_student_fair_huge');
 
 x=[10^(-7), 10^(-6), 0.00001, 0.0001, 0.0005, 0.01:0.01:0.1, 0.2:0.1:3, 3:1:100] ;
 Na=length(alpha_tab);
@@ -59,7 +59,7 @@ set(gca,'box','on');
 axis([-3 2 -inf inf]);
 grid on
 subplot(2,1,2);
-plot(x,alpha_glopt,'k','linewidth',2);
+plot([0 x],[2 alpha_glopt],'k','linewidth',2);
 ylabel('\alpha^*','fontsize',14);
 xlabel('\lambda_t','fontsize',14);
 grid on
