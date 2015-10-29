@@ -1,5 +1,5 @@
 function [h, fname]=plot3d_allinone(xx)
-    fs_label=14;
+    fs_label=12;
     
     h=figure(1);
     
@@ -14,17 +14,20 @@ function [h, fname]=plot3d_allinone(xx)
         %shading interp
         axis([min(r) max(r) min(alphap) max(alphap)]);
         
+        %grid off;
+        
         set(gca,'XTick',r_ticks(i,:))
         set(gca,'YTick',a_ticks(i,:))
-      
+        
+        set(gca,'fontsize',10);
+        
         ylabel('\alpha','fontsize',fs_label);
         xlabel('r','fontsize',fs_label);
         zlabel('<T>','fontsize',fs_label);
         
         %title(sprintf('x=%.0f',xx(i)));
-        title(sprintf('(%s)',tit(i)),'fontsize',10);
+        title(sprintf('(%s)',tit(i)),'fontsize',fs_label);
     end
-    
     
     fname='plot3Dallinone';
     printpdf(h,fname);
