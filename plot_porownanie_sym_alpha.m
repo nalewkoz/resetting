@@ -1,4 +1,5 @@
 fs_label=14;
+fsize2=12;
 h=figure;
 znaczki=['ko';'k+';'k.'];
 wielkosci=[6;6;10];
@@ -15,8 +16,8 @@ plot(r_tab2,log(meanTa(:,:)),'k');
 %for i=1:size(meanTs,1)
 %     errorbar(r_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
 % end
-set(gca,'XTick',r_tab(1:end) )
-set(gca,'FontSize',8)
+set(gca,'XTick',r_tab(2:1:end) )
+set(gca,'FontSize',fsize2)
 
 xlabel('r','fontsize',fs_label);
 %ylabel('log <T>','fontsize',fs_label);
@@ -38,17 +39,17 @@ end
 %     h2=errorbar(x_tab,log(meanTs(i,:)),3*sdevT(i,:)./meanTs(i,:),'k.');
 % end
 h1=plot(x_tab2,log(meanTa(:,:)),'k');
-set(gca,'XTick',x_tab(1:end))
-set(gca,'FontSize',8)
+set(gca,'XTick',x_tab(1:2:end))
+set(gca,'FontSize',fsize2)
 xlabel('x','fontsize',fs_label);
-ylabel('log <T>','fontsize',fs_label);
+ylabel('ln <T>','fontsize',fs_label);
 axis tight
 %M
-hL=legend([h1(1) h2(1,:)],{'Analytical formula','Monte Carlo \deltat=0.03','Monte Carlo \deltat=0.01','Monte Carlo \deltat=0.001'});
+hL=legend([h1(1) h2(1,:)],{'Prediction','\deltat=0.03','\deltat=0.01','\deltat=0.001'});
 
 newPosition = [0.38 0.3 0.01 0.01];
 newUnits = 'normalized';
-set(hL,'Position', newPosition,'Units', newUnits);
+set(hL,'Position', newPosition,'Units', newUnits,'fontsize',12);
 
 
 printpdf(h,'graphics/mfat_comp_xr');

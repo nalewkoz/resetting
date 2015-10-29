@@ -1,5 +1,8 @@
 load('data/data_min_mfat_anal_fair1_huge.mat');
 
+fsize=14;
+fsize2=12;
+
 x=[0.01:0.01:0.1 0.2:0.1:10.7 10.77 10.8:0.1:11.5 12:1:100];
 Na=length(alpha_tab);
 Nx=length(x);
@@ -43,27 +46,34 @@ end
 h=figure;
 subplot(2,2,1);
 plot(x,T_glopt,'k','linewidth',2);
-ylabel('T^*','fontsize',14);
-xlabel('x','fontsize',14);
+ylabel('T^*','fontsize',fsize);
+xlabel('x','fontsize',fsize);
 set(gca,'XTick',[0 20 40 60 80 100])
-grid on
+set(gca,'fontsize',fsize2);
+grid off
 subplot(2,2,2);
 hold on
 plot(log(x)/log(10),log(r_glopt)/log(10),'k','linewidth',2);
 %plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
 plot(log(10.77)/log(10),log(r_glopt(find(x==10.77)))/log(10),'k+','MarkerSize',20);
-ylabel('log_{10}(r^*)','fontsize',14);
-xlabel('log_{10}(x)','fontsize',14);
+ylabel('log_{10}(r^*)','fontsize',fsize);
+xlabel('log_{10}(x)','fontsize',fsize);
 axis([-2 2 -4 4]);
+set(gca,'fontsize',fsize2);
 set(gca,'XTick',[-2 -1 0 1 2]);
 set(gca,'YTick',[-4 -2 0 2 4]);
 set(gca,'box','on')
-grid on
+grid off
 subplot(2,1,2);
 plot(x,alpha_glopt,'k','linewidth',2);
-ylabel('\alpha^*','fontsize',14);
-xlabel('x','fontsize',14);
-grid on
+ylabel('\alpha^*','fontsize',fsize);
+xlabel('x','fontsize',fsize);
+grid off
+set(gca,'fontsize',fsize2);
+
+currpos=get(gca,'OuterPosition');
+set(gca,'OuterPosition',currpos+[0 0.02 0 0]);
+
 
 printpdf(h,'graphics/mfat_fair_allinone');
 
