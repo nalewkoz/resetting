@@ -59,10 +59,13 @@ plot(log(x)/log(10),log(r_glopt)/log(10),'k','linewidth',2);
 plot(log(3.25)/log(10),log(r_glopt(find(x==3.25)))/log(10),'k+','MarkerSize',20);
 ylabel('log_{10}(r^*)','fontsize',fsize);
 xlabel('log_{10}(\lambda_t)','fontsize',fsize);
-set(gca,'XTick',[-2 -1 0 1 2])
+%set(gca,'XTick',[-2 -1 0 1 2])
 set(gca,'box','on')
 grid off
+axis([-2 2 -4 4]);
 set(gca,'fontsize',fsize2);
+set(gca,'XTick',[-2 -1 0 1 2])
+set(gca,'YTick',[-4 -2 0 2 4]);
 
 subplot(2,1,2);
 plot(x,alpha_glopt,'k','linewidth',2);
